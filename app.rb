@@ -1,15 +1,13 @@
 require 'sinatra'
 
 get '/' do
-  "Hello World"
+  "Hello"
 end
 
-get '/home' do
-  "Hello there"
+get '/cat' do
+  erb(:index)
 end
 
-get '/secret' do
-  "Mushrooms are disgusting"
-end
+
 
 set :session_secret, 'super secret'
