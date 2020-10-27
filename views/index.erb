@@ -1,7 +1,18 @@
 <div style='border: 3px dashed red'>
    <img src='http://bit.ly/1eze8aE'>
- </div>
- <div>
- <h1>My name is <%= @name %> <%= @middlename %> <%= @lastname %></h1>
+</div>
 
+<div>
+  <h1>My name is <% if !@name %> Biggie for now. <% end %>
+    <%= @name %> <%= @middlename %> <%= @lastname %></h1>
+
+  <% if !@name %>
+  <p>Give me a name</p>
+  <form action='/named-cat'>
+    <input type="text" name="name">
+    <input type="text" name="lastname">
+    <input type="text" name="middlename">
+    <input type="submit" value="Click Here">
+  </form>
+  <% end %>
 </div>
